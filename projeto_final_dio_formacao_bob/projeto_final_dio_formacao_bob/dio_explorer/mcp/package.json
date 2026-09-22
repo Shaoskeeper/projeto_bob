@@ -1,18 +1,21 @@
 {
   "name": "@dio/explorer-mcp-server",
   "version": "1.0.0",
-  "description": "MCP Server para DIO Explorer - Acesso via API, HTTPS e SSO às trilhas, desafios e certificados da DIO",
+  "description": "MCP Server para DIO Explorer — acesso via stdio, HTTP/HTTPS, SSO e API REST",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "ts-node src/index.ts",
+    "start:http": "node dist/index-http.js",
+    "dev": "ts-node --esm src/index.ts",
+    "dev:http": "ts-node --esm src/index-http.ts",
     "watch": "tsc --watch",
     "prepare": "npm run build"
   },
   "bin": {
-    "dio-explorer-mcp": "./dist/index.js"
+    "dio-explorer-mcp": "./dist/index.js",
+    "dio-explorer-mcp-http": "./dist/index-http.js"
   },
   "keywords": [
     "mcp",
@@ -23,12 +26,15 @@
     "education",
     "learning",
     "certificates",
-    "challenges"
+    "challenges",
+    "sso",
+    "oauth2",
+    "jwt"
   ],
   "author": "DIO - Digital Innovation One",
   "license": "MIT",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^0.5.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
     "express": "^4.18.2",
     "cors": "^2.8.5",
     "helmet": "^7.1.0",

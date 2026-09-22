@@ -1,0 +1,44 @@
+﻿# ── Dependencias ──────────────────────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# ── Build / compilacao ────────────────────────────────────────────────────────
+dist/
+build/
+*.js.map
+*.d.ts.map
+
+# ── Ambiente / segredos ───────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+# Manter apenas o template de exemplo:
+!.env.example
+
+# ── Certificados TLS gerados ──────────────────────────────────────────────────
+mcp/certs/*.crt
+mcp/certs/*.key
+mcp/certs/*.pem
+
+# ── Certificados de conclusao gerados pelo sistema ───────────────────────────
+docs/certificados-emitidos/*.md
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+server.log
+npm-debug.log*
+
+# ── Sistema operacional ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDEs ─────────────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.suo
+*.sw?
+
+# ── TypeScript cache ──────────────────────────────────────────────────────────
+*.tsbuildinfo
